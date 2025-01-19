@@ -1,0 +1,430 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family:monospace;
+    background-color: #121212; /* Matte black background */
+    color: #e0e0e0; /* Light gray text */
+    height: 100vh;
+    width: 100%; /* Full width of viewport */
+}
+
+/* Weather App Container */
+.weather-app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full screen height */
+    width: 100%; /* Full width */
+}
+
+/* Weather Box */
+.weather {
+    border: 1px solid #333; /* Subtle border */
+    width: 50%; /* Responsive width */
+    max-width: 400px; /* Maximum width */
+    padding: 20px; /* Inner spacing */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Subtle shadow */
+    height: 70vh; /* Fixed height */
+    background-image: linear-gradient(45deg , #2f4680 , #500ae4) !important;
+}
+
+  
+ /* Search Bar Container */
+.search-weather {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
+  }
+  
+  /* Search Input */
+  .search-weather input {
+    flex: 1;
+    max-width: 250px; /* Ensure input does not overflow */
+    padding: 10px;
+    border: 1px solid #444; /* Subtle border */
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    flex-shrink: 0; /* Prevent input from shrinking */
+  }
+  
+  /* Change input styles on focus */
+  .search-weather input:focus {
+    border: 1px solid #555; /* Highlighted border */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2); /* Glow effect */
+  }
+  
+ /* Search Icon */
+.search-weather img {
+    width: 16px; /* Decrease image size */
+    height: 16px; /* Decrease image size */
+    cursor: pointer;
+    filter: invert(1); /* Inverts color for better visibility */
+    
+  }
+  
+  /* Button */
+  button {
+    padding: 10px 12px; /* Decrease padding to make the button smaller */
+    background-color: #02060a; /* Accent color: blue */
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px; /* Decrease font size */
+    flex-shrink: 0; /* Prevent button from shrinking */
+     margin-left: 5px;
+  }
+  
+  button:hover {
+    background-color: #1b2025; /* Darker blue on hover */
+    transition: background-color 0.3s ease;
+  }
+  
+  
+  /* Header */
+  .header {
+    font-size: 140%; /* Increase font size */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+    margin-right: 15px;
+  }
+  
+  .main-weather {
+    display: flex; /* Use Flexbox for alignment */
+    align-items: center; /* Vertically center items */
+    justify-content: space-between; /* Push content to the edges */
+    margin: 5% auto; /* Center horizontally with some space on top and bottom */
+    width: 90%; /* Take 90% of the parent width */
+    padding: 15px; /* Inner spacing */
+    border-radius: 8px; /* Rounded corners */
+    color: white; /* Text color */
+    height: 20vh; /* Fixed height */
+    box-sizing: border-box; /* Include padding and border in width/height */
+   
+}
+  .main-weather .details {
+    display: flex;
+    flex-direction: column; /* Stack text vertically */
+    justify-content: center; /* Center vertically */
+    gap: 5px; /* Add spacing between items */
+    text-align: left; /* Align text to the left */
+    flex: 1; /* Let this section take more space */
+}
+.main-weather .temp {
+    font-size: 3rem; /* Adjust temperature font size */
+    font-weight: bold;
+}
+
+.main-weather .description {
+    font-size: 1.4em; /* Medium font for description */
+    color: yellow;
+}
+
+.main-weather .place {
+    font-size: 1.1rem; /* Smaller font for location */
+    color:yellow;
+}
+
+/* Right Side (Image) */
+.main-weather .image {
+    display: flex; /* Flexbox to align the image */
+    justify-content: center;
+    align-items: center;
+    flex: 0; /* Ensure image stays its natural size */
+}
+
+.main-weather img {
+    height: 80px; /* Adjust image height */
+    width: 80px; /* Adjust image width */
+    object-fit: cover; /* Ensure the image fits properly */
+}
+
+
+.sub-weathers{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+    margin: auto 0;
+}
+
+.sub-weathers img {
+    width: 24px;
+    height: 24px;
+}
+
+.humidity {
+    flex: 1 1 calc(40% - 20px); /* Flexbox with responsive width */
+    background-color: transparent; /* Transparent background */
+    color: white; /* Text color */
+    text-align: left; /* Align text to the left */
+    padding: 10px; /* Inner spacing */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0px 15px rgba(255, 255, 255, 0.2); /* Subtle shadow */
+    box-sizing: border-box; /* Include padding and border in size */
+    height: 120px; /* Adjust height as needed */
+    display: flex; /* Use Flexbox layout */
+    flex-direction: column; /* Stack the elements vertically */
+    gap: 5px; /* Space between the heading and content */
+}
+
+/* Styling for the heading (Humidity) */
+.humidity .humidity-heading {
+    font-size: 16px; /* Heading font size */
+    font-weight: bold; /* Make heading bold */
+    margin: 0; /* Remove default margin */
+    padding: 5px;
+}
+
+/* Content Styling (Image and Text) */
+.humidity .humidity-content {
+    display: flex; /* Align image and text horizontally */
+    align-items: center; /* Vertically center the content */
+    gap: 15px; /* Space between the image and the text */
+}
+
+.humidity img {
+    width: 24px; /* Adjust the size of the image */
+    height: 24px; /* Adjust the size of the image */
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+.humidity span{
+    margin-top: 3px;
+    display: block; /* Forces each line of text to be on a new line */
+    font-size: 14px; /* Adjust font size */
+    line-height: 1; /* Improve readability */
+}
+
+
+.wind-speed {
+    flex: 1 1 calc(40% - 20px); /* Flexible width */
+    background-color: transparent; /* Transparent background */
+    color: white; /* Text color */
+    padding: 10px; /* Inner spacing */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0px 15px rgba(255, 255, 255, 0.2); /* Shadow */
+    box-sizing: border-box; /* Include padding in size */
+    height: 120px; /* Fixed height */
+    display: flex; /* Use Flexbox for layout */
+    flex-direction: column; /* Stack the elements vertically */
+    gap: 5px; /* Space between the elements */
+}
+
+/* Styling for the Heading (Wind Speed) */
+.wind-speed .wind-heading {
+    font-size: 16px; /* Heading size */
+    font-weight: bold; /* Bold font for emphasis */
+    margin: 0; /* Remove default margin */
+}
+
+/* Container for image and text */
+.wind-speed .wind-info {
+    display: flex; /* Align the image and text horizontally */
+    align-items: center; /* Vertically center the content */
+    gap: 10px; /* Space between the image and text */
+}
+
+/* Styling for the Image */
+.wind-speed img {
+    width: 24px; /* Set image size */
+    height: 24px; /* Set image size */
+    flex-shrink: 0; /* Prevent the image from shrinking */
+}
+
+/* Styling for the text */
+.wind-speed span {
+    font-size: 17px; /* Text size */
+    margin: 0; /* Remove default margin */
+    line-height: 1.5; /* Improve text readability */
+}
+
+.pressure{
+    flex: 1 1 calc(40% - 20px); /* Decrease width to 45% */
+    background-color: transparent; /* Example background color */
+    color: white; /* Text color */
+    text-align: center; /* Center text */
+    padding: 10px; /* Reduced inner spacing */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0px 15px rgba(255, 255, 255, 0.2); /* Subtle shadow */
+    box-sizing: border-box; /* Include padding and border in size */
+    height: 100px; /* Add a fixed height to reduce the height of boxes */
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    display: flex;
+}
+
+.pressure span{
+    margin-top: 3px;
+    display: block; /* Forces each line of text to be on a new line */
+    font-size: 14px; /* Adjust font size */
+    line-height: 1; /* Improve readability */
+}
+.sun-rise-up {
+    display: flex; /* Aligns items horizontally */
+    flex-direction: column; /* Stack sunrise and sunset vertically */
+    align-items: flex-start; /* Align text to the left */
+    gap: 8px; /* Space between sunrise and sunset */
+    flex: 1 1 calc(40% - 20px); /* Adjust width of the box */
+    background-color: transparent; /* Transparent background */
+    color: white; /* Text color */
+    padding: 14px; /* Padding inside the box */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0px 15px rgba(255, 255, 255, 0.2); /* Subtle shadow */
+    box-sizing: border-box; /* Include padding and border in size */
+    height: auto; /* Allow height to adjust based on content */
+}
+
+/* Ensure each piece of information (sunrise and sunset) is in a block */
+.sun-rise-up span {
+    margin-top: 3px;
+    display: block; /* Forces each line of text to be on a new line */
+    font-size: 14px; /* Adjust font size */
+    line-height: 1; /* Improve readability */
+}
+
+
+/* For screens below 600px */
+@media (max-width: 600px) {
+    .search-weather {
+        display: flex;
+        flex-wrap: nowrap; /* Prevent wrapping */
+        justify-content: flex-start; /* Align elements to the left */
+        align-items: center; /* Vertically align the items */
+        width: 100%;
+    }
+
+    /* Adjust the header */
+    .header {
+        font-size: 1rem; /* Slightly smaller font size */
+        margin-right: 10px; /* Adjust space between header and input */
+    }
+
+    /* Adjust input field */
+    .search-weather input {
+        flex: 1; /* Let the input take available space */
+        max-width: 160px; /* Adjust max-width for the input */
+        padding: 8px;
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    /* Adjust the search button */
+    .search-weather button {
+        padding: 6px 8px; /* Reduce padding for smaller screens */
+        font-size: 1rem; /* Adjust font size */
+        margin-left: 5px;
+        display: flex; /* Ensure the button contents are aligned */
+        justify-content: center; /* Center align the content */
+        align-items: center; /* Vertically align the content */
+    }
+
+    /* Adjust the image inside the button */
+    .search-weather img {
+        width: 14px; /* Smaller image size */
+        height: 14px; /* Smaller image size */
+    }
+
+    /* Weather Container Adjustments */
+    .weather {
+        width: 80%; /* Ensure the container doesn't stretch too wide */
+        height: auto; /* Allow flexible height */
+    }
+
+    /* Adjust the weather section layout */
+    .main-weather {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: center;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .main-weather img {
+        height: 60px; /* Adjust the weather icon size */
+        width: 60px;
+    }
+}
+
+
+@media(max-width:1024px){
+    .weather{
+        width: 70%;
+    }
+    .sub-weathers{
+        gap: 10px;
+    }
+    .search-weather input{
+        max-width: 300px;
+    }
+}
+/* For screens below 460px */
+@media (max-width: 460px) {
+    /* Adjust the weather container */
+    .weather {
+        width: 80%; /* Limit width to 80% of the screen */
+        max-width: 320px; /* Limit max-width to avoid overflow */
+        margin: 0 auto; /* Center the container */
+    }
+
+    /* Sub-weather section adjustments */
+    .sub-weathers {
+        display: flex;
+        flex-wrap: wrap; /* Stack the items vertically if necessary */
+        justify-content: space-between;
+        gap: 10px; /* Add space between items */
+        width: 100%; /* Ensure sub-weather section takes full width */
+        max-width: 320px; /* Limit max-width */
+        margin: auto; /* Center the section */
+    }
+
+    /* Adjust each sub-weather box */
+    .sub-weathers .humidity,
+    .sub-weathers .wind-speed,
+    .sub-weathers .pressure {
+        flex: 1 1 45%; /* Allow items to grow and shrink */
+        height: auto; /* Let the height adjust based on content */
+        background-color: transparent;
+        color: white;
+        text-align: left;
+        padding: 8px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        box-sizing: border-box; /* Ensure padding and borders are included in width/height */
+        word-wrap: break-word; /* Ensure long text wraps correctly */
+    }
+
+    /* Adjust image size in each sub-weather box */
+    .sub-weathers img {
+        width: 16px; /* Smaller image size */
+        height: 16px; /* Ensure image is properly sized */
+        margin-right: 8px; /* Space between image and text */
+    }
+
+    /* Adjust text size for sub-weather box content */
+    .sub-weathers span {
+        font-size: 0.9rem; /* Smaller font size for better fit */
+        line-height: 1.4; /* Improved readability */
+    }
+
+    /* Adjust padding and gap for content inside sub-box */
+    .sub-weathers .humidity .humidity-heading,
+    .sub-weathers .wind-speed .wind-heading,
+    .sub-weathers .pressure .pressure-heading {
+        font-size: 1rem; /* Adjust heading size for better readability */
+        font-weight: bold; /* Make the headings bold */
+    }
+
+    /* Adjust for content inside humidity, wind-speed, pressure */
+    .sub-weathers .humidity .humidity-content,
+    .sub-weathers .wind-speed .wind-info,
+    .sub-weathers .pressure .pressure-content {
+        display: flex;
+        align-items: center;
+        gap: 5px; /* Add space between content */
+    }
+}
+
